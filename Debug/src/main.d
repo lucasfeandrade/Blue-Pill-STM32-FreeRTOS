@@ -31,6 +31,10 @@ src/main.o: ../src/main.c \
  C:/Users/Lucasfa/workspace/RTOS_workspace/STM32_RTOS/Utilities/STM32F1xx-Nucleo/stm32f1xx_nucleo.h \
  C:/Users/Lucasfa/workspace/RTOS_workspace/STM32_RTOS/Third-Party/FreeRTOS/org/Source/include/FreeRTOS.h \
  C:/Users/Lucasfa/workspace/RTOS_workspace/STM32_RTOS/Config/FreeRTOSConfig.h \
+ C:/Users/Lucasfa/workspace/RTOS_workspace/STM32_RTOS/Third-Party/SEGGER/OS/SEGGER_SYSVIEW_FreeRTOS.h \
+ C:/Users/Lucasfa/workspace/RTOS_workspace/STM32_RTOS/Third-Party/SEGGER/SEGGER/SEGGER_SYSVIEW.h \
+ C:/Users/Lucasfa/workspace/RTOS_workspace/STM32_RTOS/Third-Party/SEGGER/SEGGER/SEGGER.h \
+ C:/Users/Lucasfa/workspace/RTOS_workspace/STM32_RTOS/Third-Party/SEGGER/Config/Global.h \
  C:/Users/Lucasfa/workspace/RTOS_workspace/STM32_RTOS/Third-Party/FreeRTOS/org/Source/include/projdefs.h \
  C:/Users/Lucasfa/workspace/RTOS_workspace/STM32_RTOS/Third-Party/FreeRTOS/org/Source/include/portable.h \
  C:/Users/Lucasfa/workspace/RTOS_workspace/STM32_RTOS/Third-Party/FreeRTOS/org/Source/include/deprecated_definitions.h \
@@ -102,6 +106,14 @@ C:/Users/Lucasfa/workspace/RTOS_workspace/STM32_RTOS/Utilities/STM32F1xx-Nucleo/
 C:/Users/Lucasfa/workspace/RTOS_workspace/STM32_RTOS/Third-Party/FreeRTOS/org/Source/include/FreeRTOS.h:
 
 C:/Users/Lucasfa/workspace/RTOS_workspace/STM32_RTOS/Config/FreeRTOSConfig.h:
+
+C:/Users/Lucasfa/workspace/RTOS_workspace/STM32_RTOS/Third-Party/SEGGER/OS/SEGGER_SYSVIEW_FreeRTOS.h:
+
+C:/Users/Lucasfa/workspace/RTOS_workspace/STM32_RTOS/Third-Party/SEGGER/SEGGER/SEGGER_SYSVIEW.h:
+
+C:/Users/Lucasfa/workspace/RTOS_workspace/STM32_RTOS/Third-Party/SEGGER/SEGGER/SEGGER.h:
+
+C:/Users/Lucasfa/workspace/RTOS_workspace/STM32_RTOS/Third-Party/SEGGER/Config/Global.h:
 
 C:/Users/Lucasfa/workspace/RTOS_workspace/STM32_RTOS/Third-Party/FreeRTOS/org/Source/include/projdefs.h:
 

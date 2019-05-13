@@ -47,7 +47,8 @@
 #define configTICK_RATE_HZ			( ( TickType_t ) 1000 )
 #define configMAX_PRIORITIES		( 5 )
 #define configMINIMAL_STACK_SIZE	( ( unsigned short ) 128 )
-#define configTOTAL_HEAP_SIZE		( ( size_t ) ( 16 * 1024 ) )
+//Less RAM to TOTAL_HEAP_SIZE because we have 2kb of SEGGER RAM
+#define configTOTAL_HEAP_SIZE		( ( size_t ) ( 13 * 1024 ) )
 #define configMAX_TASK_NAME_LEN		( 16 )
 #define configUSE_TRACE_FACILITY	0
 #define configUSE_16_BIT_TICKS		0
@@ -67,12 +68,20 @@ to exclude the API function. */
 #define INCLUDE_vTaskSuspend			1
 #define INCLUDE_vTaskDelayUntil			1
 #define INCLUDE_vTaskDelay				1
+//Adding this because of Segger
+#define INCLUDE_xTaskGetIdleTaskHandle 	1
+#define INCLUDE_pxTaskGetStackStart		1
 //Adding this myself (Lucas F) in order to run the tasks by the scheduler
 #define vPortSVCHandler SVC_Handler
 
 #define xPortPendSVHandler PendSV_Handler
 
 #define xPortSysTickHandler SysTick_Handler
+
+//Adding this to SEGGER
+#include "SEGGER_SYSVIEW_FreeRTOS.h"
+
+
 /* This is the raw value as per the Cortex-M3 NVIC.  Values can be 255
 (lowest) to 0 (1?) (highest). */
 #define configKERNEL_INTERRUPT_PRIORITY 		255

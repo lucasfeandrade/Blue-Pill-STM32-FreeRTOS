@@ -19,6 +19,9 @@ StdPeriph_Driver/src \
 Third-Party/FreeRTOS/org/Source \
 Third-Party/FreeRTOS/org/Source/portable/GCC/ARM_CM3 \
 Third-Party/FreeRTOS/org/Source/portable/MemMang \
+Third-Party/SEGGER/Config \
+Third-Party/SEGGER/OS \
+Third-Party/SEGGER/SEGGER \
 Utilities/STM32F1xx-Nucleo \
 src \
 startup \

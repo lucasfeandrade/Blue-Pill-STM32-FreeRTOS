@@ -23,22 +23,28 @@ void vTask1_handler(void *params);
 void vTask2_handler(void *params);
 
 //used for semihosting
-//#ifdef USE_SEMIHOSTING
+#ifdef USE_SEMIHOSTING
 	extern void initialise_monitor_handles();
-//#endif
+#endif
 
 int main(void)
 {
 
-//#ifdef USE_SEMIHOSTING
+#ifdef USE_SEMIHOSTING
 	initialise_monitor_handles();
 	printf("Hello world from task 1\n");
-//#endif
+#endif
+
+	DWT->CTRL |= (1 <<0); //Enable counter for SEGGER timestamp
+
 	//1. Turn on internal clock
 	//HSI ON, PLL OFF, HSE OFF
 	RCC_DeInit();
 	//2. update the systemCoreClock variable
 	SystemCoreClockUpdate();
+	//Starting Segger
+	SEGGER_SYSVIEW_Conf();
+	SEGGER_SYSVIEW_Start();
 	//3. create task 1 and 2
 	//vTask1_handler: funcao task, "Task-1" nome task,
 	//512: num bytes (numero min da freeRTOSConfig.h * 4 pois la sao words)
@@ -59,19 +65,36 @@ int main(void)
 
 void vTask1_handler(void * params) {
 	while(1) {
-		printf("Hello world from task 1\n");
+
 	}
 
 }
 
 void vTask2_handler(void * params) {
 	while(1) {
-		printf("Hello world from task 2\n");
+
 	}
 }
-//
-//static void prvSetupHardware(void)
-//{
-//	//1. Enable the UART Peripheral clock
-//}
+
+static void prvSetupHardware(void)
+{
+	GPIO_InitTypeDef gpio_uart_pins;
+	//1. Enable the UART and GPIOAPeripheral clock
+	RCC_APB1PeriphClockCmd(RCC_APB1Periph_USART2, ENABLE);
+	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA, ENABLE);
+	//PA2 is UART2_TX, PA3 is UART2_RX
+
+	//2 Alternate function configuration of MCU pins to behave as UART2 TX and RX
+
+	gpio_uart_pins.GPIO_Pin = GPIO_Pin_2 | GPIO_Pin_3;
+	gpio_uart_pins.GPIO_Mode = 0x02; //alternate function
+//	gpio_uart_pins.GPIO_PuPd = GPIO_PuPd_UP;
+	gpio_uart_GPIO_Init(GPIOA, &gpio_uart_pins);
+
+	//3. AF mode settings for the pins
+//	GPIO_PinAFConfig(GPIOA, GPIO_PinSource, GPIO_AF_USART2);
+
+
+
+}
 
